@@ -1,5 +1,7 @@
 namespace: argo-kustomize-test
 
 resources:
-  - namespace.yaml
-  - deployment.yaml
+  - ../bases
+
+patches:
+  - path: patch.yaml
