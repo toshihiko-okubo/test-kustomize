@@ -13,12 +13,12 @@ spec:
   source:
     directory:
       include: "*"
-      recurse: true
+      recurse: false
     path: nginx
     repoURL: https://github.com/toshihiko-okubo/test-kustomize
     targetRevision: main
   syncPolicy:
     automated:
       allowEmpty: false
-      prune: true
+      prune: false
       selfHeal: false
