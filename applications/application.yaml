@@ -7,7 +7,7 @@ metadata:
   namespace: argocd
 spec:
   destination:
-    namespace: argocd
+    namespace: argo-kustomize-test
     server: https://kubernetes.default.svc
   project: default
   source:
@@ -22,3 +22,21 @@ spec:
       allowEmpty: false
       prune: false
       selfHeal: false
+
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kustomize-guestbook
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: kustomize-guestbook
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: kustomize-guestbook
+    repoURL: https://github.com/toshihiko-okubo/test-kustomize
+    targetRevision: main
