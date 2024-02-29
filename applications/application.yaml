@@ -17,11 +17,11 @@ spec:
     path: nginx
     repoURL: https://github.com/toshihiko-okubo/test-kustomize
     targetRevision: main
-#  syncPolicy:
-#    automated:
-#      allowEmpty: false
-#      prune: true
-#      selfHeal: false
+  syncPolicy:
+    automated:
+      allowEmpty: false
+      prune: true
+      selfHeal: false
 
 ---
 apiVersion: argoproj.io/v1alpha1
