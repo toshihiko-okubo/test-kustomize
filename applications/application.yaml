@@ -11,9 +11,10 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-#    directory:
-#      include: "*"
-#      recurse: false
+    directory:
+      include: "*"
+      exclude: '{kustomization.yaml}'
+      recurse: true
     path: nginx
     repoURL: https://github.com/toshihiko-okubo/test-kustomize
     targetRevision: main
